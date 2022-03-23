@@ -36,3 +36,25 @@
     transform: rotate(360deg);
   }
 }
+
+@keyframes App-logo-spin {
+  0% {
+    opacity: 100%;
+  }
+
+  50% {
+    opacity: 0%;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+
+.icone {
+  animation: App-logo-spin infinite 1.5s linear;
+  transition: all ease-in-out 1s;
+}
+.icone:hover {
+  opacity: 100%;
+  color: black;
+}
