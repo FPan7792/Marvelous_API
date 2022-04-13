@@ -7,14 +7,12 @@ export const callDatas = async (
    await fetch(url)
       .then((response) => {
          if (response.ok) {
-            console.log('ok');
             return response.json();
          }
          throw response;
       })
       .then(async (datas) => {
-         console.log('APPEL', datas);
-         await action(datas);
+         await action(datas.results);
 
          if (action2) {
             await action2(datas.count);

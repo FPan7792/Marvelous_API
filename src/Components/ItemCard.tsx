@@ -10,11 +10,13 @@ const ItemCard = (Props: {
    item: any;
    isImageAvailable: boolean;
    extension: string;
+   setItemId?: React.Dispatch<React.SetStateAction<string | null>>;
 }) => {
-   const { item, extension, isImageAvailable } = Props;
+   const { item, extension, isImageAvailable, setItemId } = Props;
 
    return (
       <Card
+         onClick={() => setItemId && setItemId(item._id)}
          key={item._id}
          className=" transition-all ease-linear hover:shadow-xl hover:shadow-[#E85D04] hover:text-[#DC2F02] hover:font-extrabold "
          sx={{
@@ -31,14 +33,13 @@ const ItemCard = (Props: {
                textAlign: 'center',
                flexDirection: 'column',
                height: '100%',
-               // border: 'blue 2px solid',
             }}
          >
             <CardMedia
                className=" transition-all duration-200 hover:opacity-100 ease-linear hover:scale-105 "
                component="img"
                sx={{
-                  height: 8 / 10,
+                  height: 7.9 / 10,
                   opacity: '10%',
                }}
                image={
@@ -51,15 +52,15 @@ const ItemCard = (Props: {
             <CardContent>
                <Typography
                   gutterBottom
-                  variant="h6"
+                  variant="body1"
                   component="div"
                   fontFamily={'PT Sans Narrow'}
                   fontStyle="italic"
                   fontWeight="thin"
                   letterSpacing={4}
-                  className="hover:font-extrabold"
+                  className="hover:font-extrabold "
                >
-                  {item.name}
+                  {item.name ? item.name : item.title}
                </Typography>
             </CardContent>
          </CardActionArea>

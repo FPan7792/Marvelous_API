@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import './App.css';
+
 import Home from './pages/Home';
 import Loader from './Components/Loader';
 import Header from './Components/Header/Header';
@@ -9,6 +9,7 @@ import Characters from './pages/Characters';
 import Comics from './pages/Comics';
 import NotFound from './pages/NotFound';
 import { callDatas } from './requests';
+import CharacterCard from './pages/CharacterCard';
 
 function App() {
    const [loader, setLoader] = useState(true);
@@ -23,10 +24,9 @@ function App() {
       };
 
       callDatas(
-         `https://lereacteur-marvel-api.herokuapp.com/${demand}?apiKey=VpOLMrMWXOs2z6FI`,
+         `https://lereacteur-marvel-api.herokuapp.com/${demand}?apiKey=${process.env.REACT_APP_API_KEY}`,
          setDatas
       );
-      console.log('DEMANDE CHARGEE');
 
       Appear();
    }, [demand]);
@@ -36,14 +36,11 @@ function App() {
          {loader ? (
             <Loader />
          ) : (
-            <div className=" relative font-Andika pb-1 ">
+            <div className=" relative font-Andika bg-[whitesmoke] ">
                <Header />
-               <Menu
-                  datas={datas.results}
-                  switchDemand={setDemand}
-                  demand={demand}
-               />
+               <Menu datas={datas} switchDemand={setDemand} demand={demand} />
                <Routes>
+                  <Route path="/characters/:id" element={<CharacterCard />} />
                   <Route path="/characters" element={<Characters />} />
                   <Route path="/comics" element={<Comics />} />
                   <Route path="/" element={<Home />} />

@@ -14,22 +14,20 @@ export const Characters = () => {
    const [charactersTable, setCharactersTable] = useState<any>();
    const [totalItems, setTotalItems] = useState<number>(1);
 
-   const [itemId, setItemId] = useState('');
+   const [itemId, setItemId] = useState<string | null>(null);
 
    useEffect(() => {
       setLoader(true);
       let skip = limit * page - limit;
 
       callDatas(
-         `https://lereacteur-marvel-api.herokuapp.com/characters?apiKey=VpOLMrMWXOs2z6FI&limit=${limit}&skip=${skip}`,
+         `https://lereacteur-marvel-api.herokuapp.com/characters?apiKey=${process.env.REACT_APP_API_KEY}&limit=${limit}&skip=${skip}`,
          setCharactersTable,
          setTotalItems
       );
 
       setLoader(false);
    }, [limit, page, loader, totalItems, itemId]);
-
-   console.log(itemId);
 
    return (
       <div>
@@ -45,20 +43,17 @@ export const Characters = () => {
                   totalItems={totalItems}
                />
                <div className=" flex flex-wrap justify-center bg-[#370617] border-[#03071E] rounded-xl shadow-white m-5 ">
-                  {charactersTable?.results?.map((item: any) => {
+                  {charactersTable?.map((item: any, index: number) => {
                      let image: string[] = item.thumbnail.path.split('/');
                      const isImageAvailable: boolean =
                         image[image.length - 1] !== 'image_not_available';
                      const extension: string = item.thumbnail.extension;
 
                      return (
-                        <div
-                           onClick={() => {
-                              setItemId(item._id);
-                           }}
-                        >
+                        <div key={index}>
                            <ItemCard
                               item={item}
+                              setItemId={setItemId}
                               isImageAvailable={isImageAvailable}
                               extension={extension}
                            />

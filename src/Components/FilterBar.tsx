@@ -3,6 +3,7 @@ import Stack from '@mui/material/Stack';
 
 import Box from '@mui/material/Box';
 import Slider from '@mui/material/Slider';
+
 import { useEffect } from 'react';
 
 interface Commands {
@@ -26,7 +27,7 @@ export const FilterBar = (Props: Commands) => {
    };
    return (
       <div>
-         <p className="text-center font-PTSans font-extrabold my-3">
+         <p className="text-center font-PTSans font-extrabold my-3 text-[#6A040F] ">
             {' '}
             Total : {totalItems}
          </p>
@@ -38,7 +39,7 @@ export const FilterBar = (Props: Commands) => {
                shape="rounded"
                page={page}
                onChange={handleChange}
-               color="secondary"
+               color="standard"
             />
          </Stack>
 
