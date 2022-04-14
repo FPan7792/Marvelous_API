@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/FPan7792/Marvelous_API/static/css/main.0b040dc0.css",
-    "main.js": "/FPan7792/Marvelous_API/static/js/main.7a3e4303.js",
+    "main.js": "/FPan7792/Marvelous_API/static/js/main.2d874560.js",
     "static/media/waldemar-brandt-eIOPDU3Fkwk-unsplash.jpg": "/FPan7792/Marvelous_API/static/media/waldemar-brandt-eIOPDU3Fkwk-unsplash.7733b3a1689db3ff3cd6.jpg",
     "static/media/image_accueil_marvel.jpg": "/FPan7792/Marvelous_API/static/media/image_accueil_marvel.b2d3705458ed9062b889.jpg",
     "static/media/langfr-1920px-MarvelLogo.svg_uw9pi8.png": "/FPan7792/Marvelous_API/static/media/langfr-1920px-MarvelLogo.svg_uw9pi8.74d959e2ebc32e4a5ee4.png",
     "index.html": "/FPan7792/Marvelous_API/index.html",
     "main.0b040dc0.css.map": "/FPan7792/Marvelous_API/static/css/main.0b040dc0.css.map",
-    "main.7a3e4303.js.map": "/FPan7792/Marvelous_API/static/js/main.7a3e4303.js.map"
+    "main.2d874560.js.map": "/FPan7792/Marvelous_API/static/js/main.2d874560.js.map"
   },
   "entrypoints": [
     "static/css/main.0b040dc0.css",
-    "static/js/main.7a3e4303.js"
+    "static/js/main.2d874560.js"
   ]
 }
