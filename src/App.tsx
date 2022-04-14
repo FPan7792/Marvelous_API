@@ -40,11 +40,23 @@ function App() {
                <Header />
                <Menu datas={datas} switchDemand={setDemand} demand={demand} />
                <Routes>
-                  <Route path="/characters/:id" element={<CharacterCard />} />
-                  <Route path="/characters" element={<Characters />} />
-                  <Route path="/comics" element={<Comics />} />
-                  <Route path="/" element={<Home />} />
-                  <Route path="/*" element={<NotFound />} />
+                  <Route
+                     path="/FPan7792/Marvelous_API/characters/:id"
+                     element={<CharacterCard />}
+                  />
+                  <Route
+                     path="/FPan7792/Marvelous_API/characters"
+                     element={<Characters />}
+                  />
+                  <Route
+                     path="/FPan7792/Marvelous_API/comics"
+                     element={<Comics />}
+                  />
+                  <Route path="/FPan7792/Marvelous_API" element={<Home />} />
+                  <Route
+                     path="/FPan7792/Marvelous_API/*"
+                     element={<NotFound />}
+                  />
                </Routes>
             </div>
          )}
