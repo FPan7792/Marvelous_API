@@ -34,7 +34,7 @@ export const Comics = (Props: Infos) => {
 
       const fillDatas = async () => {
          callDatas(
-            `https://lereacteur-marvel-api.herokuapp.com/comics?apiKey=${process.env.REACT_APP_API_KEY}&limit=${limit}&skip=${skip}`,
+            `https://lereacteur-marvel-api.herokuapp.com/comics?apiKey=VpOLMrMWXOs2z6FI&limit=${limit}&skip=${skip}`,
             setComicsTable,
             setTotalItems
          );

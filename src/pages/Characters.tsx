@@ -21,7 +21,7 @@ export const Characters = () => {
       let skip = limit * page - limit;
 
       callDatas(
-         `https://lereacteur-marvel-api.herokuapp.com/characters?apiKey=${process.env.REACT_APP_API_KEY}&limit=${limit}&skip=${skip}`,
+         `https://lereacteur-marvel-api.herokuapp.com/characters?apiKey=VpOLMrMWXOs2z6FI&limit=${limit}&skip=${skip}`,
          setCharactersTable,
          setTotalItems
       );
